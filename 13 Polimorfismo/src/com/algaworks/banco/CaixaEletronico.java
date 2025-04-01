@@ -12,9 +12,22 @@ public class CaixaEletronico {
         contaDestino.depositar(valorTransferencia);
     }
 
-    public void imprimirDemonstrativo(Conta conta){
-        System.out.printf("Custo da impressão: R$%.2f%n" , TARIFA_IMPRESSAO_DEMONSTRATIVO);
-        conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+    public void imprimirDemonstrativo(Conta conta) {
+        // conta é visto como um objeto de superclasse
+        // logo se eu preciso acessar os metodos da subclasse
+        // necessário fazer um downcast
+
+        // Essa e uma coercao explicita e pode levar a problemas
+        // caso o objeto nao seja de um subtipo direto da coercao
+        // Evite isto
+//        ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
+
+        if (contaInvestimento.getValorTotalRendimentos() > 0) {
+            System.out.println("Impressão de Demonstrativo gratuita!!");
+        } else {
+            System.out.printf("Custo da impressão: R$%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
+            conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+        }
 
         conta.imprimirDemonstrativo();
     }

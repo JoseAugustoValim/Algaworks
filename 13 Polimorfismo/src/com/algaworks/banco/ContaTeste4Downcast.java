@@ -9,8 +9,7 @@ public class ContaTeste4Downcast {
 
         ContaInvestimento conta2 = new ContaInvestimento(new Titular("Maria da silva", "1345678911"), 1234, 99998);
         conta2.depositar(100);
-
-        caixaEletronico.imprimirDemonstrativo(conta1);
+        conta2.creditarRendimentos(10);
 
         caixaEletronico.imprimirDemonstrativo(conta2);
     }
