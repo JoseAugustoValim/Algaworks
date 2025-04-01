@@ -20,6 +20,6 @@ public class ContaTeste3 {
         caixaEletronico.transferir(conta1, conta3, 50);
 
         conta1.imprimirDemonstrativo();
-        conta2.imprimirDemonstrativo();
+        conta3.imprimirDemonstrativo();
     }
 }
