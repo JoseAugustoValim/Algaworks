@@ -15,5 +15,7 @@ public class CaixaEletronico {
     public void imprimirDemonstrativo(Conta conta){
         System.out.printf("Custo da impressão: R$%.2f%n" , TARIFA_IMPRESSAO_DEMONSTRATIVO);
         conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+
+        conta.imprimirDemonstrativo();
     }
 }
