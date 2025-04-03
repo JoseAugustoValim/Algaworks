@@ -22,11 +22,10 @@ public class CaixaEletronico {
         // Evite isto
 //        ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
 
-        if (conta instanceof ContaInvestimento) {
-            ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
-            if (contaInvestimento.getValorTotalRendimentos() > 0) {
-                System.out.println("Impressão de Demonstrativo gratuita!!");
-            }
+        // *1 Patern Matching para instance of
+        if (conta instanceof ContaInvestimento contaInvestimento && contaInvestimento.getValorTotalRendimentos() > 0) {
+            // *1 semelhante a isto aqui ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
+            System.out.println("Impressão de Demonstrativo gratuita!!");
 
         } else {
             debitaTarifaImpressaoDemonstrativo(conta);
