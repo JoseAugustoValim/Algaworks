@@ -13,24 +13,11 @@ public class CaixaEletronico {
     }
 
     public void imprimirDemonstrativo(Conta conta) {
-        // conta é visto como um objeto de superclasse
-        // logo se eu preciso acessar os metodos da subclasse
-        // necessário fazer um downcast
-
-        // Essa e uma coercao explicita e pode levar a problemas
-        // caso o objeto nao seja de um subtipo direto da coercao
-        // Evite isto
-//        ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
-
-        // *1 Patern Matching para instance of
-        if (conta instanceof ContaInvestimento contaInvestimento && contaInvestimento.getValorTotalRendimentos() > 0) {
-            // *1 semelhante a isto aqui ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
-            System.out.println("Impressão de Demonstrativo gratuita!!");
-
-        } else {
+        if (!conta.possuiGratuidadeImpressao()) {
             debitaTarifaImpressaoDemonstrativo(conta);
         }
 
+        System.out.println("Impressão de demonstrativo gratuita!");
         conta.imprimirDemonstrativo();
     }
 
