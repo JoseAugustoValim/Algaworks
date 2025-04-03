@@ -1,4 +1,7 @@
-package com.algaworks.banco;
+import com.algaworks.banco.CaixaEletronico;
+import com.algaworks.banco.ContaEspecial;
+import com.algaworks.banco.ContaInvestimento;
+import com.algaworks.banco.Titular;
 
 public class ContaTeste4Downcast {
     public static void main(String[] args) {
