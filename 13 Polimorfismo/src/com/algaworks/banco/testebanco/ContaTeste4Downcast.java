@@ -1,3 +1,5 @@
+package com.algaworks.banco.testebanco;
+
 import com.algaworks.banco.CaixaEletronico;
 import com.algaworks.banco.ContaEspecial;
 import com.algaworks.banco.ContaInvestimento;

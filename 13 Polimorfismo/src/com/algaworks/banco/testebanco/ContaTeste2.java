@@ -1,5 +1,6 @@
+package com.algaworks.banco.testebanco;
+
 import com.algaworks.banco.Conta;
-import com.algaworks.banco.ContaInvestimento;
 import com.algaworks.banco.ContaSalario;
 import com.algaworks.banco.Titular;
 
