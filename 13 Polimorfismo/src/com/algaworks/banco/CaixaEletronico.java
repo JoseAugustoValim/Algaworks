@@ -13,20 +13,15 @@ public class CaixaEletronico {
     }
 
     public void imprimirDemonstrativo(Conta conta) {
-        if (conta instanceof ContaInvestimento) {
-            ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
-            if (contaInvestimento.getValorTotalRendimentos() > 0) {
-                System.out.println("Impressão de Demonstrativo gratuita!!");
-            } else {
-                debitarTarifaImpressaoDemonstrativo(conta);
-            }
+        if (!conta.possuiGratuidadeImpressao()) {
+            debitaTarifaImpressaoDemonstrativo(conta);
         }
 
-
+        System.out.println("Impressão de demonstrativo gratuita!");
         conta.imprimirDemonstrativo();
     }
 
-    private static void debitarTarifaImpressaoDemonstrativo(Conta conta) {
+    private static void debitaTarifaImpressaoDemonstrativo(Conta conta) {
         System.out.printf("Custo da impressão: R$%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
         conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
     }

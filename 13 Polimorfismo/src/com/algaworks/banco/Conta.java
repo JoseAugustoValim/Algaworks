@@ -60,6 +60,10 @@ public class Conta {
         System.out.printf("Saldo: %.2f%n", getSaldo());
     }
 
+    public boolean possuiGratuidadeImpressao() {
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Conta{" +
